@@ -1380,14 +1380,13 @@
         }
     },
     {
-        "author": "mabdullah22",
+        "author": "noraj",
         "links": {
-            "github": "https://www.github.com/maabdullah22",
-            "twitter": "https://twitter.com/0x416264",
+            "github": "https://github.com/noraj",
+            "twitter": "https://twitter.com/noraj_rawsec",
             "linkedin": "",
-            "website": "",
+            "website": "https://pwn.by/noraj",
             "email": ""
         }
-    }
-
+    },
 ]

@@ -2,7 +2,7 @@ id: grafana-detect
 
 info:
   name: Grafana Login Panel - Detect
-  author: organiccrap,AdamCrosser
+  author: organiccrap,bhutch
   severity: info
   description: Grafana login panel was detected.
   classification:
@@ -12,10 +12,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: title:"Grafana"
-    vendor: "grafana"
-    product: "grafana"
-    category: "devops"
-  tags: panel,grafana,detect
+  tags: panel,grafana
 
 http:
   - method: GET
@@ -28,12 +25,10 @@ http:
         part: body
     extractors:
       - type: regex
-        name: version
         part: body
         group: 1
         regex:
           - '\"version\"\:\"([0-9.]+)\"}'
+          - '\"subTitle\":\"Grafana v([0-9.]+)'
 
-      - type: kval
-        kval:
-          - version
+# Enhanced by md on 2022/11/16
