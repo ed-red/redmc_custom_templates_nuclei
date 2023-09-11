@@ -4,9 +4,9 @@ info:
   name: PHP Source - Backup File Information Disclosure
   author: StreetOfHackerR007,pwnhxl,mastercho
   severity: medium
-  tags: exposure,backup,php,disclosure,fuzz
   metadata:
-    max-request: 1025
+    max-request: 1170
+  tags: exposure,backup,php,disclosure,fuzz
 
 http:
   - method: GET
@@ -61,6 +61,7 @@ http:
         - /404.php
         - /wp-login.php
         - /config.php
+        - /config
 
       bakext:
         - ".~"
@@ -112,6 +113,8 @@ http:
           - "$_POST["
           - "$_REQUEST["
           - "$_SERVER["
+          - "'DB_PASSWORD'"
+          - "define('DB_"
         condition: or
 
       - type: word
