@@ -12,7 +12,7 @@ info:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
-  tags: network,addpac,apos,voip
+  tags: network,addpac,apos,voip,detect
   metadata:
     max-request: 2
 
@@ -23,7 +23,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-      - "{{Host}}:23"
+    port: 23
 
     matchers:
       - type: word
@@ -37,5 +37,3 @@ tcp:
       - type: regex
         regex:
           - 'Kernel Version \d\.\d\d\.\d\d\d'
-
-# Enhanced by md on 2023/02/06
