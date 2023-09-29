@@ -16,14 +16,13 @@ dns:
     type: PTR
 
     matchers:
-      - type: word
-        words:
-          - "IN\tPTR"
+      - type: regex
+        part: answer
+        regex:
+          - "IN\tPTR\\t(.+)$"
 
     extractors:
       - type: regex
         group: 1
         regex:
           - "IN\tPTR\t(.+)"
-
-

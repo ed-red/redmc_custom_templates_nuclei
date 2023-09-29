@@ -20,7 +20,6 @@ dns:
 
     matchers:
       - type: regex
+        part: answer
         regex:
-          - "IN\tDS\t(.+)"
-
-
+          - "IN\tDS\\t(.+)$"

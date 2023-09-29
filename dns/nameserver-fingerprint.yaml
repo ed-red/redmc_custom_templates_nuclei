@@ -16,14 +16,13 @@ dns:
     type: NS
 
     matchers:
-      - type: word
-        words:
-          - "IN\tNS"
+      - type: regex
+        part: answer
+        regex:
+          - "IN\tNS\\t(.+)$"
 
     extractors:
       - type: regex
         group: 1
         regex:
           - "IN\tNS\t(.+)"
-
-

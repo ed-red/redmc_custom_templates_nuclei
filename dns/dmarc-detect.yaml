@@ -21,10 +21,14 @@ dns:
   - name: "_dmarc.{{FQDN}}"
     type: TXT
 
+    matchers:
+      - type: regex
+        part: answer
+        regex:
+          - "IN\tTXT\\t(.+)$"
+
     extractors:
       - type: regex
         group: 1
         regex:
           - "IN\tTXT\t(.+)"
-
-
